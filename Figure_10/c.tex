@@ -1,0 +1,193 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+% \definecolor{darkgray176}{RGB}{176,176,176}
+% \definecolor{darkkhaki204185116}{RGB}{204,185,116}
+% \definecolor{indianred1967882}{RGB}{196,78,82}
+% \definecolor{lightgray204}{RGB}{204,204,204}
+% \definecolor{lightslategray129114178}{RGB}{129,114,178}
+% \definecolor{mediumseagreen85168104}{RGB}{85,168,104}
+% \definecolor{mediumturquoise100181205}{RGB}{100,181,205}
+% \definecolor{steelblue76114176}{RGB}{76,114,176}
+
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{steelblue76114176}{RGB}{102,51,153}    % V - Violet (muted purple)
+\definecolor{mediumseagreen85168104}{RGB}{0,90,160} % B - Blue (cool steel blue)
+\definecolor{indianred1967882}{RGB}{30,100,30}      % G - Green (dark forest green)
+\definecolor{lightslategray129114178}{RGB}{180,180,0} % Y - Yellow (muted mustard)
+\definecolor{darkkhaki204185116}{RGB}{180,70,0}     % O - Orange (burnt orange)
+\definecolor{mediumturquoise100181205}{RGB}{130,0,0} % R - Red (deep crimson)
+
+\begin{axis}[
+legend cell align={left},
+legend style={fill opacity=0.8, draw opacity=1, text opacity=1, draw=lightgray204},
+log basis y={10},
+tick align=outside,
+tick pos=left,
+width=\textwidth,
+x grid style={darkgray176},
+xlabel={\(\displaystyle \delta/d\)},
+xmin=-0.0011965299689706, xmax=0.0318769815013484,
+xtick style={color=black},
+y grid style={darkgray176},
+ylabel={Number of contacts \(\displaystyle (N_c)\)},
+ymin=0.507782884586266, ymax=1516214.9481019,
+ymode=log,
+ytick style={color=black},
+ytick={0.01,0.1,1,10,100,1000,10000,100000,1000000,10000000,100000000},
+yticklabels={
+  \(\displaystyle {10^{-2}}\),
+  \(\displaystyle {10^{-1}}\),
+  \(\displaystyle {10^{0}}\),
+  \(\displaystyle {10^{1}}\),
+  \(\displaystyle {10^{2}}\),
+  \(\displaystyle {10^{3}}\),
+  \(\displaystyle {10^{4}}\),
+  \(\displaystyle {10^{5}}\),
+  \(\displaystyle {10^{6}}\),
+  \(\displaystyle {10^{7}}\),
+  \(\displaystyle {10^{8}}\)
+}
+]
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.000306811461498444,0.01) rectangle (axis cs:0.000715883959585259,85877.01);
+%\addlegendimage{ybar,ybar legend,draw=none,fill=steelblue76114176}
+%\addlegendentry{t1}
+
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.00337485519714956,0.01) rectangle (axis cs:0.00378392769523637,769908.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.00644289893280067,0.01) rectangle (axis cs:0.00685197143088748,438854.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.00951094266845178,0.01) rectangle (axis cs:0.00992001516653859,25280.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.0125789864041029,0.01) rectangle (axis cs:0.0129880589021897,633.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.015647030139754,0.01) rectangle (axis cs:0.0160561026378408,27.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.0187150738754051,0.01) rectangle (axis cs:0.0191241463734919,4.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.0217831176110562,0.01) rectangle (axis cs:0.022192190109143,2.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.0248511613467073,0.01) rectangle (axis cs:0.0252602338447941,1.01);
+\draw[draw=none,fill=steelblue76114176] (axis cs:0.0279192050823584,0.01) rectangle (axis cs:0.0283282775804453,1.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.000715883959585259,0.01) rectangle (axis cs:0.00112495645767207,56182.01);
+%\addlegendimage{ybar,ybar legend,draw=none,fill=mediumseagreen85168104}
+%\addlegendentry{t2}
+
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.00378392769523637,0.01) rectangle (axis cs:0.00419300019332318,699253.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.00685197143088748,0.01) rectangle (axis cs:0.0072610439289743,380281.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.00992001516653859,0.01) rectangle (axis cs:0.0103290876646254,35546.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.0129880589021897,0.01) rectangle (axis cs:0.0133971314002765,1766.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.0160561026378408,0.01) rectangle (axis cs:0.0164651751359276,43.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.0191241463734919,0.01) rectangle (axis cs:0.0195332188715787,0.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.022192190109143,0.01) rectangle (axis cs:0.0226012626072299,0.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.0252602338447941,0.01) rectangle (axis cs:0.025669306342881,0.01);
+\draw[draw=none,fill=mediumseagreen85168104] (axis cs:0.0283282775804453,0.01) rectangle (axis cs:0.0287373500785321,0.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.00112495645767207,0.01) rectangle (axis cs:0.00153402895575889,50596.01);
+%\addlegendimage{ybar,ybar legend,draw=none,fill=indianred1967882}
+%\addlegendentry{t3}
+
+\draw[draw=none,fill=indianred1967882] (axis cs:0.00419300019332318,0.01) rectangle (axis cs:0.00460207269141,581890.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0072610439289743,0.01) rectangle (axis cs:0.00767011642706111,274516.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0103290876646254,0.01) rectangle (axis cs:0.0107381601627122,25333.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0133971314002765,0.01) rectangle (axis cs:0.0138062038983633,1665.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0164651751359276,0.01) rectangle (axis cs:0.0168742476340144,42.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0195332188715787,0.01) rectangle (axis cs:0.0199422913696656,0.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0226012626072299,0.01) rectangle (axis cs:0.0230103351053167,0.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.025669306342881,0.01) rectangle (axis cs:0.0260783788409678,0.01);
+\draw[draw=none,fill=indianred1967882] (axis cs:0.0287373500785321,0.01) rectangle (axis cs:0.0291464225766189,0.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.00153402895575889,0.01) rectangle (axis cs:0.0019431014538457,49299.01);
+%\addlegendimage{ybar,ybar legend,draw=none,fill=lightslategray129114178}
+%\addlegendentry{t4}
+
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.00460207269141,0.01) rectangle (axis cs:0.00501114518949681,312674.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.00767011642706111,0.01) rectangle (axis cs:0.00807918892514793,223046.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0107381601627122,0.01) rectangle (axis cs:0.011147232660799,54475.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0138062038983633,0.01) rectangle (axis cs:0.0142152763964501,9298.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0168742476340144,0.01) rectangle (axis cs:0.0172833201321013,1166.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0199422913696656,0.01) rectangle (axis cs:0.0203513638677524,125.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0230103351053167,0.01) rectangle (axis cs:0.0234194076034035,14.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0260783788409678,0.01) rectangle (axis cs:0.0264874513390546,1.01);
+\draw[draw=none,fill=lightslategray129114178] (axis cs:0.0291464225766189,0.01) rectangle (axis cs:0.0295554950747057,0.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0019431014538457,0.01) rectangle (axis cs:0.00235217395193252,27556.01);
+%\addlegendimage{ybar,ybar legend,draw=none,fill=darkkhaki204185116}
+%\addlegendentry{t5}
+
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.00501114518949681,0.01) rectangle (axis cs:0.00542021768758363,258946.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.00807918892514793,0.01) rectangle (axis cs:0.00848826142323474,108705.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.011147232660799,0.01) rectangle (axis cs:0.0115563051588859,5980.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0142152763964501,0.01) rectangle (axis cs:0.014624348894537,402.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0172833201321013,0.01) rectangle (axis cs:0.0176923926301881,32.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0203513638677524,0.01) rectangle (axis cs:0.0207604363658392,1.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0234194076034035,0.01) rectangle (axis cs:0.0238284801014903,0.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0264874513390546,0.01) rectangle (axis cs:0.0268965238371414,0.01);
+\draw[draw=none,fill=darkkhaki204185116] (axis cs:0.0295554950747057,0.01) rectangle (axis cs:0.0299645675727925,0.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.00235217395193252,0.01) rectangle (axis cs:0.00276124645001933,15088.01);
+%\addlegendimage{ybar,ybar legend,draw=none,fill=mediumturquoise100181205}
+%\addlegendentry{t6}
+
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.00542021768758363,0.01) rectangle (axis cs:0.00582929018567044,164127.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.00848826142323474,0.01) rectangle (axis cs:0.00889733392132156,35689.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.0115563051588859,0.01) rectangle (axis cs:0.0119653776569727,823.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.014624348894537,0.01) rectangle (axis cs:0.0150334213926238,53.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.0176923926301881,0.01) rectangle (axis cs:0.0181014651282749,12.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.0207604363658392,0.01) rectangle (axis cs:0.021169508863926,0.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.0238284801014903,0.01) rectangle (axis cs:0.0242375525995771,0.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.0268965238371414,0.01) rectangle (axis cs:0.0273055963352282,0.01);
+\draw[draw=none,fill=mediumturquoise100181205] (axis cs:0.0299645675727925,0.01) rectangle (axis cs:0.0303736400708793,0.01);
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+7.08793333314278e-09 0.507782884586266
+7.08793333314278e-09 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.00306805082358444 0.507782884586266
+0.00306805082358444 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.00613609455923555 0.507782884586266
+0.00613609455923555 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.00920413829488667 0.507782884586266
+0.00920413829488667 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.0122721820305378 0.507782884586266
+0.0122721820305378 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.0153402257661889 0.507782884586266
+0.0153402257661889 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.01840826950184 0.507782884586266
+0.01840826950184 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.0214763132374911 0.507782884586266
+0.0214763132374911 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.0245443569731422 0.507782884586266
+0.0245443569731422 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.0276124007087933 0.507782884586266
+0.0276124007087933 1516214.9481019
+};
+\addplot [line width=0.32pt, black, opacity=1.0, forget plot]
+table {%
+0.0306804444444444 0.507782884586266
+0.0306804444444444 1516214.9481019
+};
+\end{axis}
+
+\end{tikzpicture}
+\end{document}

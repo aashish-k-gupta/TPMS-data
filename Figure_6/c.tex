@@ -1,0 +1,103 @@
+\documentclass{standalone}
+\usepackage{pgfplots}
+\pgfplotsset{compat=newest}
+\begin{document}
+% This file was created with tikzplotlib v0.10.1.
+\begin{tikzpicture}
+
+\definecolor{crimson2143940}{RGB}{214,39,40}
+\definecolor{darkgray176}{RGB}{176,176,176}
+\definecolor{darkorange25512714}{RGB}{255,127,14}
+\definecolor{forestgreen4416044}{RGB}{44,160,44}
+\definecolor{lightgray204}{RGB}{204,204,204}
+\definecolor{mediumpurple148103189}{RGB}{148,103,189}
+\definecolor{sienna1408675}{RGB}{140,86,75}
+\definecolor{steelblue31119180}{RGB}{31,119,180}
+
+\begin{axis}[
+legend style={fill opacity=0, draw opacity=1, text opacity=1, at={(0.15,0.7)}, anchor=west, draw=none},
+log basis y={10},
+tick align=outside,
+tick pos=left,
+width=\textwidth,
+x grid style={darkgray176},
+xlabel={cohesion energy density},
+xmin=-2.25, xmax=47.25,
+xtick style={color=black},
+y grid style={darkgray176},
+ylabel={final retention (\%)},
+ymin=0.235719055398696, ymax=127.85558911115,
+ymode=log,
+ytick style={color=black},
+ytick={0.01,0.1,1,10,100,1000,10000},
+yticklabels={
+  \(\displaystyle {10^{-2}}\),
+  \(\displaystyle {10^{-1}}\),
+  \(\displaystyle {10^{0}}\),
+  \(\displaystyle {10^{1}}\),
+  \(\displaystyle {10^{2}}\),
+  \(\displaystyle {10^{3}}\),
+  \(\displaystyle {10^{4}}\)
+}
+]
+\addplot [semithick, steelblue31119180, mark=triangle, mark size=3, mark options={solid,fill opacity=0}]
+table {%
+0 0.313821138211382
+10 0.414092140921409
+20 0.640831074977416
+25 0.971093044263776
+35 4.10135501355014
+37 12.7080397470641
+38 20.3380307136405
+39 90.7031616982837
+40 93.2099367660343
+45 96.0355916892502
+};
+\addlegendentry{Schwarz-P}
+
+\addplot [semithick, darkorange25512714, mark=square, mark size=3, mark options={solid,fill opacity=0}]
+table {%
+0 0.789611772604156
+20 1.3868846892869
+25 2.08428184490968
+30 3.46460733549916
+35 22.2354906666461
+37 33.0680073154357
+38 40.3892305674093
+39 49.7856685366814
+45 73.3434164936839
+};
+\addlegendentry{Gyroid}
+
+\addplot [semithick, forestgreen4416044, mark=pentagon, mark size=3, mark options={solid,fill opacity=0}, only marks]
+table {%
+0 0.84
+35 58.93
+};
+\addlegendentry{Diamond}
+
+\addplot [semithick, crimson2143940, mark=o, mark size=3, mark options={solid,fill opacity=0}, only marks]
+table {%
+0 5.13
+35 84.33
+};
+\addlegendentry{$F-RD$}
+
+\addplot [semithick, mediumpurple148103189, mark=triangle, mark size=3, mark options={solid,rotate=180,fill opacity=0}, only marks]
+table {%
+0 2.65
+35 75.69
+};
+\addlegendentry{$I_2-Y^{**}$}
+
+\addplot [semithick, sienna1408675, mark=diamond, mark size=3, mark options={solid,fill opacity=0}, only marks]
+table {%
+0 4.59
+35 15.07
+};
+\addlegendentry{$I-WP$}
+
+\end{axis}
+
+\end{tikzpicture}
+\end{document}
