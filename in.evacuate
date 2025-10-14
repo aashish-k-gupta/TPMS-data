@@ -1,0 +1,83 @@
+# read a TPMS cell created out of particles and allow the powder trapped inside it to flow under gravity
+#------------------------------------------------------------------
+
+# Define relevant parameters here
+
+variable filename string schwarz_p_fixed_flow 
+variable time_step equal 1 
+variable dmp_stp equal 5000
+#------------------------------------------------------------------
+# Preliminaries
+units micro
+atom_style sphere
+boundary f f f    #fff in post
+newton off
+communicate single vel yes
+#-------------------------------------------------------------------
+read_data read_TPMS_P.liggghts                           
+
+neighbor 5 bin
+neigh_modify every 1 delay 0
+#-------------------------------------------------------------------
+
+# pressure = picogram/(micrometer-microsecond^2) = 1000 kg/(meter*sec^2) = 1000 Pa 
+# pressure in micro unit = P (Pa) / 1000
+fix     m1 all property/global youngsModulus peratomtype 2.11e3 2.11e3
+fix 	m2 all property/global poissonsRatio peratomtype 0.3 0.3
+fix 	m3 all property/global coefficientRestitution peratomtypepair 2 0.64 0.64 0.64 0.64
+fix 	m4 all property/global coefficientFriction peratomtypepair 2 0.5 0.5 0.5 0.5
+fix 	m5 all property/global coefficientRollingFriction peratomtypepair 2 0.000 0.0 0.0 0.0
+fix     m6 all property/global cohesionEnergyDensity peratomtypepair 2 10 10 10 10
+#-------------------------------------------------------------------
+
+group TPMS_shell type 1
+group rest type 2 3
+velocity TPMS_shell set 0.0 0.0 0.0
+fix fix_freeze TPMS_shell freeze
+set type 2 density 7.980
+set type 1 density 7.980
+#-------------------------------------------------------------------
+
+# Contact physics
+pair_style	gran model hertz tangential history cohesion sjkr rolling_friction cdt
+pair_coeff	* *
+#-------------------------------------------------------------------
+
+# Integrator
+fix integrate rest nve/sphere
+#-------------------------------------------------------------------
+# Timestep (t col/10)
+timestep ${time_step}
+#---------------------------------------------------------------------
+
+compute         3 all pair/gran/local id pos delta force
+compute max_overlap all reduce max c_3[13]
+
+
+# Thermo settings
+thermo_style custom step atoms ke cpu fmax c_max_overlap
+thermo 500
+thermo_modify lost ignore norm no flush yes
+compute_modify thermo_temp dynamic yes
+#----------------------------------------------------------------------
+
+#compute        4 all wall/gran/local id pos delta force
+#----------------------------------------------------------------------
+
+# Make a dump of particles and the vtk file
+dump dmp all custom ${dmp_stp} post_coh_10/${filename}*.liggghts id type x y z ix iy iz vx vy vz fx fy fz omegax omegay omegaz radius 
+dump dmp_1 all custom/vtk ${dmp_stp} post_coh_10/${filename}*.vtk id type x y z ix iy iz vx vy vz fx fy fz omegax omegay omegaz radius 
+dump_modify dmp sort id
+
+dump		dmp2 all local ${dmp_stp} post_coh_10/pair*.txt c_3[1] c_3[2] c_3[3] c_3[4] c_3[5] c_3[6] c_3[7] c_3[8] c_3[9] c_3[10] c_3[11] c_3[12] c_3[13]
+#dump		dmp3 all local ${dmp_stp} post/wall_pair*.txt c_4[1] c_4[2] c_4[3] c_4[4] c_4[5] c_4[6] c_4[7] c_4[8] c_4[9] c_4[10] c_4[11] c_4[12] c_4[13]
+#-----------------------------------------------------------------------
+
+# acceleration = micrometer/microsecond^2 = 10^6 meter/second^2
+fix grav all gravity 9.81e-6 vector 0 0 -1  
+
+run             250000  
+
+
+
+
